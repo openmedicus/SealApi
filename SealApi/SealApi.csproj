@@ -9,10 +9,9 @@
     <RootNamespace>SealApi</RootNamespace>
     <AssemblyName>SealApi</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
-    <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>..\SealApi.snk</AssemblyOriginatorKeyFile>
     <PackageId>SealApi</PackageId>
-    <PackageVersion>2.0.0.6</PackageVersion>
+    <PackageVersion>2.0.7</PackageVersion>
     <Authors>XMedicus Systems ApS</Authors>
     <PackageIconUrl>https://www.xmedicus.com/design/xmedicus/images/xmedicus_128x128.png</PackageIconUrl>
     <NeutralLanguage>da-DK</NeutralLanguage>
@@ -24,8 +23,10 @@
     <PackageTags>XMedicus MOCES2 STS NSP FMK MedCom FMK EPJ SealApi SAML</PackageTags>
     <Title>SealApi</Title>
     <Description>Udviklet af Digital Sundhed og pakket til NuGet af XMedicus Systems ApS</Description>
-    <PackOnBuild>true</PackOnBuild>
-    <ReleaseVersion>2.0.0.6</ReleaseVersion>
+    <ReleaseVersion>2.0.7</ReleaseVersion>
+    <SignAssembly>true</SignAssembly>
+	<PublicSign>true</PublicSign>
+	<PackOnBuild>true</PackOnBuild>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
