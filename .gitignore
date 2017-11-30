@@ -1,4 +1,6 @@
 bin/
 obj/
+packages/
 SealApi.userprefs
+SealApi/packages
 

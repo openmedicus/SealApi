@@ -1,7 +1,74 @@
-<Project Sdk="Microsoft.NET.Sdk">
-
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\NuGet.Build.Packaging.0.2.0\build\NuGet.Build.Packaging.props" Condition="Exists('..\packages\NuGet.Build.Packaging.0.2.0\build\NuGet.Build.Packaging.props')" />
   <PropertyGroup>
-    <TargetFramework>netstandard1.6</TargetFramework>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4EF2F55F-C48B-4775-A1B1-55D6A4F40B03}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>SealApi</RootNamespace>
+    <AssemblyName>SealApi</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\SealApi.snk</AssemblyOriginatorKeyFile>
+    <PackageId>SealApi</PackageId>
+    <PackageVersion>2.0.0.6</PackageVersion>
+    <Authors>XMedicus Systems ApS</Authors>
+    <PackageIconUrl>https://www.xmedicus.com/design/xmedicus/images/xmedicus_128x128.png</PackageIconUrl>
+    <NeutralLanguage>da-DK</NeutralLanguage>
+    <PackageLicenseUrl>https://github.com/openmedicus/SealApi/blob/master/LICENSE</PackageLicenseUrl>
+    <Owners>Digital Sundhed</Owners>
+    <PackageProjectUrl>https://github.com/openmedicus/SealApi</PackageProjectUrl>
+    <PackageReleaseNotes>First release</PackageReleaseNotes>
+    <Summary>SealApi for SAML</Summary>
+    <PackageTags>XMedicus MOCES2 STS NSP FMK MedCom FMK EPJ SealApi SAML</PackageTags>
+    <Title>SealApi</Title>
+    <Description>Udviklet af Digital Sundhed og pakket til NuGet af XMedicus Systems ApS</Description>
+    <PackOnBuild>true</PackOnBuild>
+    <ReleaseVersion>2.0.0.6</ReleaseVersion>
   </PropertyGroup>
-
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="DGWSAssertion.cs" />
+    <Compile Include="DGWSSaml.cs" />
+    <Compile Include="MessageSign.cs" />
+    <Compile Include="RequestResponse.cs" />
+    <Compile Include="Saml.cs" />
+    <Compile Include="SealApi.cs" />
+    <Compile Include="XmlValidationAssertion.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\NamespaceAlias.cs" />
+    <Compile Include="Utility\SignUtil.cs" />
+    <Compile Include="Utility\XNsHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Security" />
+    <Reference Include="System" />
+    <Reference Include="Microsoft.Web.Services3">
+      <HintPath>..\packages\Microsoft.Web.Services3.3.0.0.0\lib\net20\Microsoft.Web.Services3.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+	<Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+	<Import Project="..\packages\NuGet.Build.Packaging.0.2.0\build\NuGet.Build.Packaging.targets" Condition="Exists('..\packages\NuGet.Build.Packaging.0.2.0\build\NuGet.Build.Packaging.targets')" />
 </Project>

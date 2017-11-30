@@ -34,6 +34,6 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("2.0.0.0")]
 [assembly: AssemblyFileVersion("2.0.0.0")]
-[assembly: AssemblyDelaySign(true)]
+[assembly: AssemblyDelaySign(false)]
 
 //[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("SealTestProject")]
