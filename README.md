@@ -2,7 +2,7 @@
 
 # Strong Sign
 
-Since MonoDevelop is able to Strong Sign a DLL do this.
+Since MonoDevelop is unable to StrongName Sign a DLL do this.
 
 1) Build Release
 2) Manually do: "sn -R bin/Release/SealApi.dll ..//SealApi.snk"
